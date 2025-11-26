@@ -68,11 +68,14 @@
   
 
 <section id="contact" class="py-20 container mx-auto px-6 text-center">
-  <h3 class="text-4xl font-bold mb-6">Contact Us</h3>
-  <p class="text-gray-300 mb-4">Have questions? Reach out and our team will assist you.</p>
-  <p class="text-cyan-400 text-xl mb-6">support@minedime.org</p>
-  <p class="text-red-400 font-bold mb-4">You must join our Discord server before purchasing!</p>
-  <a href="https://discord.gg/jcqgVNNRnX" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-bold transition transform hover:scale-105">Join Discord</a>
+  <div class="bg-gray-800 bg-opacity-70 p-10 rounded-2xl shadow-2xl max-w-2xl mx-auto border border-cyan-400">
+    <h3 class="text-4xl font-bold mb-6 text-cyan-400">Contact Us</h3>
+    <p class="text-gray-300 mb-4 text-lg">Have questions? Reach out and our team will assist you.</p>
+    <p class="text-cyan-400 text-xl font-semibold mb-8">support@minedime.org</p>
+
+    <p class="text-red-400 font-bold mb-4 text-lg">You must join our Discord server before purchasing!</p>
+    <a href="https://discord.gg/jcqgVNNRnX" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-bold transition-all transform hover:scale-110 shadow-lg">Join Discord</a>
+  </div>
 </section>
 <section class="py-24 text-center animate__animated animate__fadeInUp">
   <h2 class="text-4xl font-bold mb-6" id="builder">Custom Plan Builder</h2>
@@ -196,7 +199,7 @@ submitOrder.onclick = async () => {
     body: JSON.stringify(message)
   });
 
-  alert('Order sent to Discord!');
+  alert('Order was sent successfully! Please wait for your response.');
 };
 </script>
 

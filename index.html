@@ -14,13 +14,12 @@
   </style>
 </head>
 <body class="bg-gray-900 text-white font-sans" style="background: url('images.png') no-repeat center center fixed; background-size: cover;">
-
   <header class="bg-gray-800 py-6 shadow-xl">
     <div class="container mx-auto flex justify-between items-center px-6">
       <h1 class="text-3xl font-extrabold text-cyan-400">MineDime Hosting</h1>
       <nav class="space-x-6 text-lg">
         <a href="#features" class="hover:text-cyan-400">Features</a>
-        <a href="#builder" class="hover:text-cyan-400">Plan Builder</a>
+        <a href="#builder" class="hover:text-cyan-400">Pricing</a>
         <a href="#contact" class="hover:text-cyan-400">Contact</a>
       </nav>
     </div>
@@ -50,8 +49,8 @@
     </div>
   </section>
 
-  <section id="builder" class="py-24 text-center animate__animated animate__fadeInUp">
-    <h2 class="text-4xl font-bold mb-6">Custom Plan Builder</h2>
+  <section class="py-24 text-center animate__animated animate__fadeInUp">
+    <h2 class="text-4xl font-bold mb-6" id="builder">Custom Plan Builder</h2>
     <p class="text-gray-300 mb-8">Create your own server plan and instantly send your order to our Discord!</p>
 
     <div class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-2xl shadow-lg">
@@ -64,6 +63,9 @@
       <input id="storageInput" type="range" min="10" max="300" step="10" value="10" class="w-full mb-2">
       <p id="storageValue" class="mb-6 text-cyan-400">10 GB — €3</p>
 
+      <label class="block text-left mb-4 text-lg">Coupon Code</label>
+      <input id="couponInput" type="text" placeholder="Enter coupon code" class="w-full p-3 mb-6 rounded-lg bg-gray-700">
+
       <label class="block text-left mb-4 text-lg">Currency</label>
       <select id="currencySelect" class="w-full p-3 rounded-lg bg-gray-700 mb-6">
         <option value="EUR">EUR (€)</option>
@@ -74,13 +76,13 @@
       </select>
 
       <label class="block text-left mb-4 text-lg">Your Discord Username</label>
-      <input id="discordUser" type="text" placeholder="Discord username" class="w-full p-3 mb-6 rounded-lg bg-gray-700" required>
+      <input id="discordUser" type="text" placeholder="Discord username" class="w-full p-3 mb-6 rounded-lg bg-gray-700">
 
       <label class="block text-left mb-4 text-lg">Your Email</label>
-      <input id="emailUser" type="email" placeholder="example@gmail.com" class="w-full p-3 mb-6 rounded-lg bg-gray-700" required>
+      <input id="emailUser" type="email" placeholder="example@gmail.com" class="w-full p-3 mb-6 rounded-lg bg-gray-700">
 
       <label class="block text-left mb-4 text-lg">Your Username for Our Hosting</label>
-      <input id="mcUser" type="text" placeholder="Minecraft username" class="w-full p-3 mb-6 rounded-lg bg-gray-700" required>
+      <input id="mcUser" type="text" placeholder="Minecraft username" class="w-full p-3 mb-6 rounded-lg bg-gray-700">
 
       <label class="block text-left mb-4 text-lg">Region</label>
       <select id="regionSelect" class="w-full p-3 rounded-lg bg-gray-700 mb-6">
@@ -90,85 +92,93 @@
       </select>
 
       <button id="submitOrder" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-xl font-bold text-lg w-full transition transform hover:scale-105">Send Order</button>
+
       <p id="finalPrice" class="mt-6 text-2xl font-bold"></p>
-      <div class="success mt-4" id="orderSuccess" style="display:none;">✅ Order was sent successfully! Please wait for your response.</div>
 
     </div>
   </section>
 
   <section id="contact" class="py-20 container mx-auto px-6 text-center">
-    <div class="bg-gray-800 bg-opacity-70 p-10 rounded-2xl shadow-2xl max-w-2xl mx-auto border border-cyan-400">
-      <h3 class="text-4xl font-bold mb-6 text-cyan-400">Contact Us</h3>
-      <p class="text-gray-300 mb-4 text-lg">Have questions? Reach out and our team will assist you.</p>
-      <p class="text-cyan-400 text-xl font-semibold mb-8">support@minedime.org</p>
-      <p class="text-red-400 font-bold mb-4 text-lg">You must join our Discord server before purchasing!</p>
-      <a href="https://discord.gg/jcqgVNNRnX" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-bold transition-all transform hover:scale-110 shadow-lg">Join Discord</a>
+    <div class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-2xl shadow-lg">
+      <h3 class="text-4xl font-bold mb-6">Contact Us</h3>
+      <p class="text-gray-300 mb-4">Have questions? Reach out and our team will assist you.</p>
+      <p class="text-cyan-400 text-xl mb-4">support@minedime.org</p>
+      <p class="text-gray-300 mb-4">You must join our Discord to order.</p>
+      <a href="https://discord.gg/jcqgVNNRnX" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg text-white font-bold transition">Join Discord</a>
     </div>
   </section>
 
-  <footer class="bg-gray-800 py-6 mt-16 text-center text-gray-400">
-    © 2025 MineDime Hosting. All rights reserved.
-  </footer>
+<footer class="bg-gray-800 py-6 mt-16 text-center text-gray-400">
+  © 2025 MineDime Hosting. All rights reserved.
+</footer>
 
-  <script>
-    const ramInput = document.getElementById('ramInput');
-    const storageInput = document.getElementById('storageInput');
-    const currencySelect = document.getElementById('currencySelect');
-    const discordUser = document.getElementById('discordUser');
-    const emailUser = document.getElementById('emailUser');
-    const mcUser = document.getElementById('mcUser');
-    const regionSelect = document.getElementById('regionSelect');
-    const priceBox = document.getElementById('finalPrice');
-    const orderSuccess = document.getElementById('orderSuccess');
+<script>
+const ramInput = document.getElementById('ramInput');
+const storageInput = document.getElementById('storageInput');
+const currencySelect = document.getElementById('currencySelect');
+const discordUser = document.getElementById('discordUser');
+const emailUser = document.getElementById('emailUser');
+const mcUser = document.getElementById('mcUser');
+const regionSelect = document.getElementById('regionSelect');
+const couponInput = document.getElementById('couponInput');
+const priceBox = document.getElementById('finalPrice');
 
-    const ramValue = document.getElementById('ramValue');
-    const storageValue = document.getElementById('storageValue');
-    const submitOrder = document.getElementById('submitOrder');
+const ramValue = document.getElementById('ramValue');
+const storageValue = document.getElementById('storageValue');
+const submitOrder = document.getElementById('submitOrder');
 
-    const exchangeRates = { EUR: 1, USD: 1.08, GBP: 0.85, CHF: 0.96, CAD: 1.48 };
+const exchangeRates = { EUR: 1, USD: 1.08, GBP: 0.85, CHF: 0.96, CAD: 1.48 };
+const coupons = {
+  'admin32': 100 // 100% off
+  // Add more coupons here
+};
 
-    function updatePrice() {
-      const ramPrice = ramInput.value * 1;
-      const storagePrice = (storageInput.value / 10) * 3;
-      const totalEUR = ramPrice + storagePrice;
-      const currency = currencySelect.value;
-      const converted = totalEUR * exchangeRates[currency];
+function updatePrice() {
+  let ramPrice = ramInput.value * 1;
+  let storagePrice = (storageInput.value / 10) * 3;
+  let totalEUR = ramPrice + storagePrice;
 
-      ramValue.innerText = `${ramInput.value} GB — €${ramPrice}`;
-      storageValue.innerText = `${storageInput.value} GB — €${storagePrice}`;
-      priceBox.innerText = `Total: ${converted.toFixed(2)} ${currency}`;
-    }
+  const couponCode = couponInput.value.trim();
+  if (coupons[couponCode]) totalEUR = totalEUR * (1 - coupons[couponCode] / 100);
 
-    ramInput.oninput = updatePrice;
-    storageInput.oninput = updatePrice;
-    currencySelect.onchange = updatePrice;
-    updatePrice();
+  const currency = currencySelect.value;
+  const converted = totalEUR * exchangeRates[currency];
 
-    submitOrder.onclick = async () => {
-      if (!discordUser.value || !emailUser.value || !mcUser.value) {
-        alert('Please fill in all required fields!');
-        return;
-      }
+  ramValue.innerText = `${ramInput.value} GB — €${ramInput.value * 1}`;
+  storageValue.innerText = `${storageInput.value} GB — €${(storageInput.value / 10) * 3}`;
+  priceBox.innerText = `Total: ${converted.toFixed(2)} ${currency}`;
+}
 
-      const ram = ramInput.value;
-      const storage = storageInput.value;
-      const currency = currencySelect.value;
-      const region = regionSelect.value;
-      const ramPrice = ram * 1;
-      const storagePrice = (storage / 10) * 3;
-      const total = (ramPrice + storagePrice) * exchangeRates[currency];
+ramInput.oninput = updatePrice;
+storageInput.oninput = updatePrice;
+currencySelect.onchange = updatePrice;
+couponInput.oninput = updatePrice;
+updatePrice();
 
-      const content = `✨ **New Custom Order** ✨\n\n**Discord:** ${discordUser.value}\n**Email:** ${emailUser.value}\n**Username:** ${mcUser.value}\n**RAM:** ${ram} GB\n**Storage:** ${storage} GB\n**Region:** ${region}\n**Price:** ${total.toFixed(2)} ${currency}`;
+submitOrder.onclick = async () => {
+  if (!discordUser.value || !emailUser.value || !mcUser.value) {
+    alert('Enter your Discord username, email, and Minecraft username!');
+    return;
+  }
 
-      await fetch("https://discord.com/api/webhooks/1443340087550279702/h_35PmopoISdZp_nyBb5gs5d6Lgr-Wzl_Cfjb1IT3OCyHnHuYp6uGaLbq0VKfDB87yRS", {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content })
-      });
+  const ram = ramInput.value;
+  const storage = storageInput.value;
+  const currency = currencySelect.value;
 
-      orderSuccess.style.display = 'block';
-      submitOrder.disabled = true;
-    };
-  </script>
+  let total = (ram * 1 + (storage / 10) * 3) * exchangeRates[currency];
+  const couponCode = couponInput.value.trim();
+  if (coupons[couponCode]) total = total * (1 - coupons[couponCode] / 100);
+
+  const webhookURL = "https://discord.com/api/webhooks/1443340087550279702/h_35PmopoISdZp_nyBb5gs5d6Lgr-Wzl_Cfjb1IT3OCyHnHuYp6uGaLbq0VKfDB87yRS";
+
+  const message = {
+    content: `✨ **New Custom Order** ✨\n\n**User:** ${discordUser.value}\n**RAM:** ${ram} GB\n**Storage:** ${storage} GB\n**Price:** ${total.toFixed(2)} ${currency}\n**Email:** ${emailUser.value}\n**Minecraft:** ${mcUser.value}\n**Region:** ${regionSelect.value}\n**Coupon:** ${couponCode || 'None'}`
+  };
+
+  await fetch(webhookURL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(message) });
+
+  alert('Order sent! Please wait for your response.');
+};
+</script>
 </body>
 </html>

@@ -5,7 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MineDime Hosting</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    .btn-hover {
+      background-color: #0ea5e9;
+      color: black;
+      transition: all 0.3s ease;
+    }
+    .btn-hover:hover {
+      background-color: #1e40af !important;
+      transform: scale(1.05);
+    }
+    .feature-hover {
+      transition: all 0.3s ease;
+    }
+    .feature-hover:hover {
+      background-color: rgba(30, 64, 175, 0.8);
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body class="bg-gray-900 text-white font-sans" style="background: url('images.png') no-repeat center center fixed; background-size: cover;">
   <header class="bg-gray-800 py-6 shadow-xl">
@@ -20,27 +38,23 @@
   </header>
 
   <section class="text-center py-24 bg-gradient-to-b from-gray-900 to-gray-800 animate__animated animate__fadeIn">
-    
     <h2 class="text-5xl font-extrabold mb-6">Powerful Minecraft Hosting</h2>
-    <p class="text-xl text-gray-300 max-w-2xl mx-auto">Blazing‑fast performance, DDoS protection, premium hardware, and instant setup. Start your Minecraft server with MineDime Hosting today.</p>
-    <a href="#pricing" class="mt-10 inline-block bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-3 px-8 rounded-xl shadow-lg transition">Get Started</a>
+    <p class="text-xl text-gray-300 max-w-2xl mx-auto">Blazing-fast performance, DDoS protection, premium hardware, and instant setup. Start your Minecraft server with MineDime Hosting today.</p>
+    <a href="#pricing" class="mt-10 inline-block btn-hover font-bold py-3 px-8 rounded-xl shadow-lg">Get Started</a>
   </section>
 
   <section id="features" class="py-20 container mx-auto px-6">
     <h3 class="text-4xl font-bold text-center mb-12">Why Choose MineDime?</h3>
     <div class="grid md:grid-cols-3 gap-10">
-      <div class="bg-gray-800 p-8 rounded-2xl shadow-lg animate__animated animate__fadeInUp">
-        
-        <h4 class="text-2xl font-bold mb-3 text-cyan-400">Ultra‑Fast Hardware</h4>
-        <p class="text-gray-300">Powered by Ryzen / Intel CPUs and NVMe SSDs for lag‑free performance.</p>
+      <div class="feature-hover bg-gray-800 p-8 rounded-2xl shadow-lg animate__animated animate__fadeInUp">
+        <h4 class="text-2xl font-bold mb-3 text-cyan-400">Ultra-Fast Hardware</h4>
+        <p class="text-gray-300">Powered by Ryzen / Intel CPUs and NVMe SSDs for lag-free performance.</p>
       </div>
-      <div class="bg-gray-800 p-8 rounded-2xl shadow-lg animate__animated animate__fadeInUp">
-        
+      <div class="feature-hover bg-gray-800 p-8 rounded-2xl shadow-lg animate__animated animate__fadeInUp">
         <h4 class="text-2xl font-bold mb-3 text-cyan-400">DDoS Protection</h4>
-        <p class="text-gray-300">Your server stays online with enterprise‑grade protection.</p>
+        <p class="text-gray-300">Your server stays online with enterprise-grade protection.</p>
       </div>
-      <div class="bg-gray-800 p-8 rounded-2xl shadow-lg animate__animated animate__fadeInUp">
-        
+      <div class="feature-hover bg-gray-800 p-8 rounded-2xl shadow-lg animate__animated animate__fadeInUp">
         <h4 class="text-2xl font-bold mb-3 text-cyan-400">Instant Setup</h4>
         <p class="text-gray-300">Launch your server instantly with our automated deployment.</p>
       </div>
@@ -59,7 +73,7 @@
           <li>DDoS Protection</li>
           <li>Instant Setup</li>
         </ul>
-        <a href="#" class="block text-center bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-3 rounded-xl transition">Order Now</a>
+        <a href="#" class="block text-center btn-hover font-bold py-3 rounded-xl">Order Now</a>
       </div>
       <div class="bg-gray-900 p-8 rounded-2xl shadow-xl border border-cyan-500 animate__animated animate__zoomIn">
         <h4 class="text-3xl font-bold mb-4">Advanced</h4>
@@ -70,7 +84,7 @@
           <li>DDoS Protection</li>
           <li>Fast Support</li>
         </ul>
-        <a href="#" class="block text-center bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-3 rounded-xl transition">Order Now</a>
+        <a href="#" class="block text-center btn-hover font-bold py-3 rounded-xl">Order Now</a>
       </div>
       <div class="bg-gray-900 p-8 rounded-2xl shadow-xl border border-cyan-500 animate__animated animate__zoomIn">
         <h4 class="text-3xl font-bold mb-4">Pro</h4>
@@ -81,7 +95,7 @@
           <li>DDoS Protection</li>
           <li>Priority Support</li>
         </ul>
-        <a href="#" class="block text-center bg-cyan-500 hover:bg-cyan-400 text-black font-bold py-3 rounded-xl transition">Order Now</a>
+        <a href="#" class="block text-center btn-hover font-bold py-3 rounded-xl">Order Now</a>
       </div>
     </div>
   </section>

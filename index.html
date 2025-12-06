@@ -14,30 +14,29 @@
 
   <!-- Header -->
   <header class="max-w-7xl mx-auto p-4 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3">
+    <a href="#" class="flex items-center gap-3">
       <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-cyan-400 rounded-lg flex items-center justify-center font-bold">MD</div>
       <span class="text-xl font-semibold">MineDime Hosting</span>
     </a>
     <nav class="hidden md:flex gap-6 items-center text-sm">
-      <a href="index.html" class="hover:underline">Home</a>
-      <a href="pricing.html" class="hover:underline">Pricing</a>
-      <a href="features.html" class="hover:underline">Features</a>
-      <a href="support.html" class="hover:underline">Support</a>
-      <a href="contact.html" class="hover:underline">Contact</a>
+      <a href="#products" class="hover:underline">Products</a>
+      <a href="#pricing" class="hover:underline">Pricing</a>
+      <a href="#features" class="hover:underline">Features</a>
+      <a href="#support" class="hover:underline">Support</a>
       <a href="login.html" class="px-4 py-2 bg-indigo-500 rounded text-white">Sign In</a>
     </nav>
     <button class="md:hidden px-3 py-2 bg-slate-800 rounded">Menu</button>
   </header>
 
   <!-- Hero -->
-  <section class="hero-bg py-16">
+  <section class="hero-bg py-16" id="products">
     <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
       <div>
         <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Fast & Secure Hosting for Minecraft & Discord Bots</h1>
         <p class="mt-4 text-slate-300 max-w-xl">SSD storage, DDoS protection, automated backups and 24/7 support — everything you need to launch and scale.</p>
         <div class="mt-6 flex gap-3">
-          <a href="pricing.html" class="px-5 py-3 bg-indigo-500 rounded shadow hover:bg-indigo-600">See Plans</a>
-          <a href="features.html" class="px-5 py-3 border border-slate-700 rounded">Why MineDime Hosting</a>
+          <a href="#pricing" class="px-5 py-3 bg-indigo-500 rounded shadow hover:bg-indigo-600">See Plans</a>
+          <a href="#features" class="px-5 py-3 border border-slate-700 rounded">Why MineDime Hosting</a>
         </div>
       </div>
       <div class="bg-slate-800/40 p-6 rounded-lg">
@@ -66,9 +65,175 @@
     </div>
   </section>
 
-  <!-- Pricing Section remains same -->
+  <!-- Pricing -->
   <section id="pricing" class="max-w-6xl mx-auto p-6 -mt-6">
-    <!-- ... all pricing cards remain unchanged ... -->
+    <h2 class="text-2xl font-bold mb-4">Hosting Plans</h2>
+
+    <!-- Minecraft Hosting -->
+    <h3 class="mt-6 text-xl font-semibold">Minecraft Hosting</h3>
+    <div class="mt-4 grid gap-6 grid-cols-1 md:grid-cols-3">
+      <!-- Dirt Plan -->
+      <article class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-lg shadow hover:scale-105 transition-transform">
+        <h4 class="text-lg font-semibold">Dirt</h4>
+        <p class="text-slate-400 mt-2">1 GB RAM server, perfect for beginners.</p>
+        <div class="mt-4 text-3xl font-bold">€1.99<span class="text-base font-normal">/mo</span></div>
+        <ul class="mt-4 text-slate-300 space-y-1">
+          <li>1 GB DDR4 RAM</li>
+          <li>20 GB NVMe SSD</li>
+          <li>2 vCores</li>
+          <li>DDoS Protection</li>
+          <li>Unlimited Player Slots</li>
+          <li>Full FTP Access</li>
+        </ul>
+        <div class="mt-4"><a class="inline-block px-4 py-2 bg-indigo-500 rounded">Choose</a></div>
+      </article>
+
+      <!-- Stone Plan -->
+      <article class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-lg shadow hover:scale-105 transition-transform">
+        <h4 class="text-lg font-semibold">Stone</h4>
+        <p class="text-slate-400 mt-2">2 GB RAM server for small groups.</p>
+        <div class="mt-4 text-3xl font-bold">€3.99<span class="text-base font-normal">/mo</span></div>
+        <ul class="mt-4 text-slate-300 space-y-1">
+          <li>2 GB DDR4 RAM</li>
+          <li>25 GB NVMe SSD</li>
+          <li>3 vCores</li>
+          <li>DDoS Protection</li>
+          <li>Unlimited Player Slots</li>
+          <li>Free MySQL Database</li>
+        </ul>
+        <div class="mt-4"><a class="inline-block px-4 py-2 bg-indigo-500 rounded">Choose</a></div>
+      </article>
+
+      <!-- Iron Plan -->
+      <article class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-lg shadow hover:scale-105 transition-transform">
+        <h4 class="text-lg font-semibold">Iron</h4>
+        <p class="text-slate-400 mt-2">4 GB RAM server for growing communities.</p>
+        <div class="mt-4 text-3xl font-bold">€5.99<span class="text-base font-normal">/mo</span></div>
+        <ul class="mt-4 text-slate-300 space-y-1">
+          <li>4 GB DDR4 RAM</li>
+          <li>35 GB NVMe SSD</li>
+          <li>4 vCores</li>
+          <li>DDoS Protection</li>
+          <li>Unlimited Player Slots</li>
+          <li>Free MySQL Database</li>
+          <li>Free Backups</li>
+        </ul>
+        <div class="mt-4"><a class="inline-block px-4 py-2 bg-indigo-500 rounded">Choose</a></div>
+      </article>
+
+      <!-- Diamond Plan -->
+      <article class="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-lg shadow hover:scale-105 transition-transform">
+        <h4 class="text-lg font-semibold">Diamond</h4>
+        <p class="text-slate-400 mt-2">8 GB RAM server for active communities.</p>
+        <div class="mt-4 text-3xl font-bold">€9.99<span class="text-base font-normal">/mo</span></div>
+        <ul class="mt-4 text-slate-300 space-y-1">
+          <li>8 GB DDR4 RAM</li>
+          <li>50 GB NVMe SSD</li>
+          <li>6 vCores</li>
+          <li>DDoS Protection</li>
+          <li>Unlimited Player Slots</li>
+          <li>Free MySQL Database</li>
+          <li>Daily Backups</li>
+          <li>Priority Support</li>
+        </ul>
+        <div class="mt-4"><a class="inline-block px-4 py-2 bg-indigo-500 rounded">Choose</a></div>
+      </article>
+
+      <!-- Emerald Plan -->
+      <article class="bg-gradient-to-br from-slate-800 to-indigo-500 p-6 rounded-lg shadow hover:scale-105 transition-transform ring-1 ring-indigo-500">
+        <h4 class="text-lg font-semibold">Emerald 12GB</h4>
+        <p class="text-slate-200 mt-2">12 GB RAM server for large communities.</p>
+        <div class="mt-4 text-3xl font-bold">€14.99<span class="text-base font-normal">/mo</span></div>
+        <ul class="mt-4 text-slate-200 space-y-1">
+          <li>12 GB DDR4 RAM</li>
+          <li>75 GB NVMe SSD</li>
+          <li>8 vCores</li>
+          <li>DDoS Protection</li>
+          <li>Unlimited Player Slots</li>
+          <li>Free MySQL Database</li>
+          <li>Hourly Backups</li>
+          <li>Priority Discord Support</li>
+          <li>Free Dedicated IP (optional)</li>
+        </ul>
+        <div class="mt-4"><a class="inline-block px-4 py-2 bg-white text-indigo-800 rounded">Choose</a></div>
+      </article>
+
+      <!-- Netherite Plan -->
+      <article class="bg-gradient-to-br from-indigo-900 to-purple-700 p-6 rounded-lg shadow hover:scale-105 transition-transform ring-2 ring-indigo-400">
+        <h4 class="text-lg font-semibold">Netherite 16GB</h4>
+        <p class="text-slate-200 mt-2">16 GB RAM server for massive communities and modded setups.</p>
+        <div class="mt-4 text-3xl font-bold">€19.99<span class="text-base font-normal">/mo</span></div>
+        <ul class="mt-4 text-slate-200 space-y-1">
+          <li>16 GB DDR4 RAM</li>
+          <li>100 GB NVMe SSD</li>
+          <li>10 vCores</li>
+          <li>DDoS Protection</li>
+          <li>Unlimited Player Slots</li>
+          <li>Free MySQL Database</li>
+          <li>Hourly Backups</li>
+          <li>Premium Discord Support</li>
+          <li>Free Dedicated IP (optional)</li>
+        </ul>
+        <div class="mt-4"><a class="inline-block px-4 py-2 bg-white text-indigo-800 rounded">Choose</a></div>
+      </article>
+    </div>
+
+    <!-- Discord Bot Hosting -->
+    <h3 class="mt-8 text-xl font-semibold">Discord Bot Hosting</h3>
+    <div class="mt-4 grid gap-6 grid-cols-1 md:grid-cols-4">
+      <article class="bg-slate-800 p-6 rounded-lg shadow hover:scale-105 transition-transform">
+        <h4 class="text-lg font-semibold">Starter 256MB</h4>
+        <p class="text-slate-400 mt-2">256MB RAM Discord bot hosting.</p>
+        <div class="mt-4 text-3xl font-bold">€0.99<span class="text-base font-normal">/mo</span></div>
+        <ul class="mt-4 text-slate-300 space-y-1">
+          <li>256 MB RAM</li>
+          <li>1 vCore</li>
+          <li>2 GB SSD</li>
+          <li>DDoS Protection</li>
+          <li>24/7 Uptime</li>
+        </ul>
+        <div class="mt-4"><a class="inline-block px-4 py-2 bg-indigo-500 rounded">Choose</a></div>
+      </article>
+      <article class="bg-slate-800 p-6 rounded-lg shadow hover:scale-105 transition-transform">
+        <h4 class="text-lg font-semibold">Basic 512MB</h4>
+        <p class="text-slate-400 mt-2">512MB RAM Discord bot hosting.</p>
+        <div class="mt-4 text-3xl font-bold">€1.99<span class="text-base font-normal">/mo</span></div>
+        <ul class="mt-4 text-slate-300 space-y-1">
+          <li>512 MB RAM</li>
+          <li>1 vCore</li>
+          <li>5 GB SSD</li>
+          <li>DDoS Protection</li>
+          <li>24/7 Uptime</li>
+        </ul>
+        <div class="mt-4"><a class="inline-block px-4 py-2 bg-indigo-500 rounded">Choose</a></div>
+      </article>
+      <article class="bg-slate-800 p-6 rounded-lg shadow hover:scale-105 transition-transform">
+        <h4 class="text-lg font-semibold">Advanced 1GB</h4>
+        <p class="text-slate-400 mt-2">1GB RAM Discord bot hosting.</p>
+        <div class="mt-4 text-3xl font-bold">€3.49<span class="text-base font-normal">/mo</span></div>
+        <ul class="mt-4 text-slate-300 space-y-1">
+          <li>1 GB RAM</li>
+          <li>2 vCores</li>
+          <li>10 GB SSD</li>
+          <li>DDoS Protection</li>
+          <li>24/7 Uptime</li>
+        </ul>
+        <div class="mt-4"><a class="inline-block px-4 py-2 bg-indigo-500 rounded">Choose</a></div>
+      </article>
+      <article class="bg-slate-800 p-6 rounded-lg shadow hover:scale-105 transition-transform">
+        <h4 class="text-lg font-semibold">Premium 2GB</h4>
+        <p class="text-slate-400 mt-2">2GB RAM Discord bot hosting.</p>
+        <div class="mt-4 text-3xl font-bold">€5.99<span class="text-base font-normal">/mo</span></div>
+        <ul class="mt-4 text-slate-300 space-y-1">
+          <li>2 GB RAM</li>
+          <li>3 vCores</li>
+          <li>15 GB SSD</li>
+          <li>DDoS Protection</li>
+          <li>24/7 Uptime</li>
+        </ul>
+        <div class="mt-4"><a class="inline-block px-4 py-2 bg-indigo-500 rounded">Choose</a></div>
+      </article>
+    </div>
   </section>
 
   <!-- Footer -->

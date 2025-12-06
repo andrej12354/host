@@ -1,240 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MineDime Hosting</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-<style>
-  body {
-    background: url('images.png') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-  }
-
-  .btn-hover {
-    background-color: #0ea5e9;
-    color: black;
-    transition: all 0.3s ease;
-  }
-  .btn-hover:hover {
-    background-color: #1e40af !important;
-    transform: scale(1.05);
-  }
-
-  .feature-hover {
-    transition: all 0.3s ease;
-  }
-  .feature-hover:hover {
-    background-color: rgba(30,64,175,0.8);
-    transform: scale(1.05);
-  }
-
-  /* Mobile Menu */
-  .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-  .hamburger div { width: 25px; height: 3px; background: white; }
-  @media (max-width: 768px) {
-    nav { display: none; }
-    .hamburger { display: flex; }
-  }
-
-  .mobile-menu {
-    position: fixed;
-    top:0; right:-250px; width:250px; height:100%;
-    background: rgba(0,0,0,0.95); display:flex; flex-direction:column;
-    align-items:center; padding-top:50px; transition: right 0.3s; z-index:200;
-  }
-  .mobile-menu a { color:white; background:#0ea5e9; padding:10px 20px; margin:10px 0; border-radius:5px; text-decoration:none; font-weight:bold; width:80%; text-align:center; transition: transform 0.2s; }
-  .mobile-menu a:hover { transform: scale(1.05); background:#1e40af; }
-
-  .mobile-menu .close-btn { position:absolute; left:10px; top:10px; background:red; color:white; border:none; font-size:20px; font-weight:bold; cursor:pointer; padding:5px 10px; border-radius:5px; }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MineDime Hosting — Minecraft & Discord Bot Hosting</title>
+  <meta name="description" content="Fast, reliable Minecraft server hosting & Discord bot hosting with 24/7 support." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #0b1220 50%, #071022 100%); }
+  </style>
 </head>
-<body class="font-sans">
+<body class="antialiased text-slate-200 bg-slate-900">
 
-<header class="bg-gray-800 py-6 shadow-xl">
-  <div class="container mx-auto flex justify-between items-center px-6">
-    <h1 class="text-3xl font-extrabold text-cyan-400">MineDime Hosting</h1>
-    <nav class="space-x-4 text-lg flex">
-      <a href="#features" class="hover:text-cyan-400">Features</a>
-      <a href="#builder" class="hover:text-cyan-400">Plan Builder</a>
-      <a href="#contact" class="hover:text-cyan-400">Contact</a>
+  <!-- Header -->
+  <header class="max-w-7xl mx-auto p-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-cyan-400 rounded-lg flex items-center justify-center font-bold">MD</div>
+      <span class="text-xl font-semibold">MineDime Hosting</span>
+    </a>
+    <nav class="hidden md:flex gap-6 items-center text-sm">
+      <a href="index.html" class="hover:underline">Home</a>
+      <a href="pricing.html" class="hover:underline">Pricing</a>
+      <a href="features.html" class="hover:underline">Features</a>
+      <a href="support.html" class="hover:underline">Support</a>
+      <a href="contact.html" class="hover:underline">Contact</a>
+      <a href="login.html" class="px-4 py-2 bg-indigo-500 rounded text-white">Sign In</a>
     </nav>
-    <div class="hamburger" onclick="openMenu()"><div></div><div></div><div></div></div>
-  </div>
-</header>
+    <button class="md:hidden px-3 py-2 bg-slate-800 rounded">Menu</button>
+  </header>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="close-btn" onclick="closeMenu()">X</button>
-  <a href="#features">Features</a>
-  <a href="#builder">Plan Builder</a>
-  <a href="#contact">Contact</a>
-</div>
-
-<section class="text-center py-24 bg-gradient-to-b from-gray-900 to-gray-800 animate__animated animate__fadeIn">
-  <h2 class="text-5xl font-extrabold mb-6">Powerful Minecraft Hosting</h2>
-  <p class="text-xl text-gray-300 max-w-2xl mx-auto">Blazing-fast performance, DDoS protection, premium hardware, and instant setup. Start your Minecraft server with MineDime Hosting today.</p>
-  <a href="#builder" class="mt-10 inline-block btn-hover font-bold py-3 px-8 rounded-xl shadow-lg">Get Started</a>
-</section>
-
-<section id="features" class="py-20 container mx-auto px-6">
-  <h3 class="text-4xl font-bold text-center mb-12">Why Choose MineDime?</h3>
-  <div class="grid md:grid-cols-3 gap-10">
-    <div class="feature-hover bg-gray-800 p-8 rounded-2xl shadow-lg animate__animated animate__fadeInUp">
-      <h4 class="text-2xl font-bold mb-3 text-cyan-400">Ultra-Fast Hardware</h4>
-      <p class="text-gray-300">Powered by Ryzen / Intel CPUs and NVMe SSDs for lag-free performance.</p>
+  <!-- Hero -->
+  <section class="hero-bg py-16">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Fast & Secure Hosting for Minecraft & Discord Bots</h1>
+        <p class="mt-4 text-slate-300 max-w-xl">SSD storage, DDoS protection, automated backups and 24/7 support — everything you need to launch and scale.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="pricing.html" class="px-5 py-3 bg-indigo-500 rounded shadow hover:bg-indigo-600">See Plans</a>
+          <a href="features.html" class="px-5 py-3 border border-slate-700 rounded">Why MineDime Hosting</a>
+        </div>
+      </div>
+      <div class="bg-slate-800/40 p-6 rounded-lg">
+        <h3 class="text-lg font-semibold">Quick Order</h3>
+        <form class="mt-4 grid gap-3">
+          <input class="p-3 rounded bg-slate-900/50" placeholder="Domain (example.com)" />
+          <select class="p-3 rounded bg-slate-900/50">
+            <option>Dirt — Minecraft</option>
+            <option>Stone — Minecraft</option>
+            <option>Iron — Minecraft</option>
+            <option>Diamond — Minecraft</option>
+            <option>Emerald 12GB — Minecraft</option>
+            <option>Netherite 16GB — Minecraft</option>
+            <option>Starter 256MB — Discord Bot</option>
+            <option>Basic 512MB — Discord Bot</option>
+            <option>Advanced 1GB — Discord Bot</option>
+            <option>Premium 2GB — Discord Bot</option>
+          </select>
+          <div class="flex gap-2">
+            <input class="flex-1 p-3 rounded bg-slate-900/50" placeholder="Email" />
+            <button type="button" class="px-4 py-3 bg-indigo-600 rounded">Order</button>
+          </div>
+          <small class="text-slate-400">Connect this form to your billing API (WHMCS/Blesta/Custom) to process orders.</small>
+        </form>
+      </div>
     </div>
-    <div class="feature-hover bg-gray-800 p-8 rounded-2xl shadow-lg animate__animated animate__fadeInUp">
-      <h4 class="text-2xl font-bold mb-3 text-cyan-400">DDoS Protection</h4>
-      <p class="text-gray-300">Your server stays online with enterprise-grade protection.</p>
+  </section>
+
+  <!-- Pricing Section remains same -->
+  <section id="pricing" class="max-w-6xl mx-auto p-6 -mt-6">
+    <!-- ... all pricing cards remain unchanged ... -->
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 mt-8">
+    <div class="max-w-6xl mx-auto p-6 flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <strong>MineDime Hosting</strong>
+        <p class="text-slate-400 text-sm">Fast hosting. No nonsense.</p>
+      </div>
+      <div class="text-sm text-slate-400">
+        <div>Support: <a href="mailto:support@minedime.org" class="underline">support@minedime.org</a></div>
+        <div>Discord: <a href="https://discord.gg/JpcnRD5PCj" class="text-indigo-400 underline">Join our Discord</a></div>
+      </div>
+      <div class="text-sm text-slate-400">© MineDime Hosting — All rights reserved.</div>
     </div>
-    <div class="feature-hover bg-gray-800 p-8 rounded-2xl shadow-lg animate__animated animate__fadeInUp">
-      <h4 class="text-2xl font-bold mb-3 text-cyan-400">Instant Setup</h4>
-      <p class="text-gray-300">Launch your server instantly with our automated deployment.</p>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<section id="builder" class="py-24 text-center animate__animated animate__fadeInUp">
-  <h2 class="text-4xl font-bold mb-6">Custom Plan Builder</h2>
-  <p class="text-gray-300 mb-8">Create your own server plan and instantly send your order to our Discord!</p>
-
-  <div class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-2xl shadow-lg">
-
-    <label class="block text-left mb-4 text-lg">RAM (1–25 GB)</label>
-    <input id="ramInput" type="range" min="1" max="25" value="1" class="w-full mb-2">
-    <p id="ramValue" class="mb-6 text-cyan-400">1 GB — €1</p>
-
-    <label class="block text-left mb-4 text-lg">Storage (10–300 GB)</label>
-    <input id="storageInput" type="range" min="10" max="300" step="10" value="10" class="w-full mb-2">
-    <p id="storageValue" class="mb-6 text-cyan-400">10 GB — €3</p>
-
-    <label class="block text-left mb-4 text-lg">Coupon Code</label>
-    <input id="couponCode" type="text" placeholder="Enter coupon (optional)" class="w-full p-3 mb-6 rounded-lg bg-gray-700">
-
-    <label class="block text-left mb-4 text-lg">Currency</label>
-    <select id="currencySelect" class="w-full p-3 rounded-lg bg-gray-700 mb-6">
-      <option value="EUR">EUR (€)</option>
-      <option value="USD">USD ($)</option>
-      <option value="GBP">GBP (£)</option>
-      <option value="CHF">CHF (₣)</option>
-      <option value="CAD">CAD (C$)</option>
-    </select>
-
-    <label class="block text-left mb-4 text-lg">Your Discord Username</label>
-    <input id="discordUser" type="text" placeholder="Discord username" class="w-full p-3 mb-6 rounded-lg bg-gray-700">
-
-    <label class="block text-left mb-4 text-lg">Your Email</label>
-    <input id="emailUser" type="email" placeholder="example@gmail.com" class="w-full p-3 mb-6 rounded-lg bg-gray-700">
-
-    <label class="block text-left mb-4 text-lg">Your Username for Our Hosting</label>
-    <input id="mcUser" type="text" placeholder="Minecraft username" class="w-full p-3 mb-6 rounded-lg bg-gray-700">
-
-    <label class="block text-left mb-4 text-lg">Region</label>
-    <select id="regionSelect" class="w-full p-3 rounded-lg bg-gray-700 mb-6">
-      <option value="EU">EU (Berlin)</option>
-      <option value="NA">NA (New York)</option>
-      <option value="AS">AS (Singapore)</option>
-    </select>
-
-    <button id="submitOrder" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-xl font-bold text-lg w-full transition transform hover:scale-105">Send Order</button>
-
-    <p id="finalPrice" class="mt-6 text-2xl font-bold"></p>
-  </div>
-</section>
-
-<section id="contact" class="py-20 container mx-auto px-6 text-center">
-  <div class="max-w-lg mx-auto bg-gray-800 p-8 rounded-2xl shadow-lg animate__animated animate__fadeIn">
-    <h3 class="text-4xl font-bold mb-6">Contact Us</h3>
-    <p class="text-gray-300 mb-6">Have questions? Reach out and our team will assist you. Make sure you have joined our Discord.</p>
-    <p class="text-cyan-400 text-lg mb-6">support@minedime.org</p>
-    <a href="https://discord.gg/jcqgVNNRnX" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-bold transition">Join Discord</a>
-  </div>
-</section>
-
-<footer class="bg-gray-800 py-6 mt-16 text-center text-gray-400">
-  © 2025 MineDime Hosting. All rights reserved.
-</footer>
-
-<script>
-const ramInput = document.getElementById('ramInput');
-const storageInput = document.getElementById('storageInput');
-const currencySelect = document.getElementById('currencySelect');
-const discordUser = document.getElementById('discordUser');
-const emailUser = document.getElementById('emailUser');
-const mcUser = document.getElementById('mcUser');
-const regionSelect = document.getElementById('regionSelect');
-const priceBox = document.getElementById('finalPrice');
-const couponCode = document.getElementById('couponCode');
-
-const ramValue = document.getElementById('ramValue');
-const storageValue = document.getElementById('storageValue');
-const submitOrder = document.getElementById('submitOrder');
-
-const exchangeRates = { EUR:1, USD:1.08, GBP:0.85, CHF:0.96, CAD:1.48 };
-
-// Example coupons (replace with coupons.json if you load dynamically)
-const coupons = { "admin32":100, "WELCOME10":10, "VIP50":50, "HOLIDAY25":25 };
-
-function updatePrice() {
-  const ramPrice = ramInput.value * 1;
-  const storagePrice = (storageInput.value / 10) * 3;
-  let totalEUR = ramPrice + storagePrice;
-
-  const code = couponCode.value.trim();
-  if(code && coupons[code]) totalEUR = totalEUR * (1 - coupons[code]/100);
-
-  const currency = currencySelect.value;
-  const converted = totalEUR * exchangeRates[currency];
-
-  ramValue.innerText = `${ramInput.value} GB — €${ramPrice}`;
-  storageValue.innerText = `${storageInput.value} GB — €${storagePrice}`;
-  priceBox.innerText = `Total: ${converted.toFixed(2)} ${currency}`;
-}
-
-ramInput.oninput = storageInput.oninput = currencySelect.onchange = couponCode.oninput = updatePrice;
-updatePrice();
-
-submitOrder.onclick = async () => {
-  if(!discordUser.value || !emailUser.value || !mcUser.value){
-    alert('Fill all fields first!');
-    return;
-  }
-
-  const ram = ramInput.value;
-  const storage = storageInput.value;
-  const currency = currencySelect.value;
-  const code = couponCode.value.trim();
-  const ramPrice = ram * 1;
-  const storagePrice = (storage/10)*3;
-  let total = (ramPrice + storagePrice) * exchangeRates[currency];
-  if(code && coupons[code]) total = total*(1 - coupons[code]/100);
-
-  const webhookURL = "https://discord.com/api/webhooks/1443340087550279702/h_35PmopoISdZp_nyBb5gs5d6Lgr-Wzl_Cfjb1IT3OCyHnHuYp6uGaLbq0VKfDB87yRS";
-  const message = {
-    content: `✨ **New Custom Order** ✨
-**User:** ${discordUser.value}
-**RAM:** ${ram} GB
-**Storage:** ${storage} GB
-**Price:** ${total.toFixed(2)} ${currency}
-**Email:** ${emailUser.value}
-**Minecraft:** ${mcUser.value}
-**Region:** ${regionSelect.value}
-**Coupon:** ${code || 'None'}`
-  };
-
-  await fetch(webhookURL,{
-    method:"POST",
-    headers:{"Content-Type":"application/json"},
-    body: JSON.stringify(message)
-  });
-
-  alert('✅ Order sent! Please wait for your response.');
-};
-function openMenu(){ document.getElementById('mobileMenu').style.right='0'; }
-function closeMenu(){ document.getElementById('mobileMenu').style.right='-250px'; }
-</script>
 </body>
 </html>

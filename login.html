@@ -1,55 +1,61 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MineDime Hosting — Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login — MineDime Hosting</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>.hero-bg { background: linear-gradient(135deg, #0f172a 0%, #0b1220 50%, #071022 100%); }</style>
 </head>
-<body class="antialiased text-slate-200 bg-slate-900">
+<body class="bg-slate-900 text-slate-200 flex items-center justify-center min-h-screen">
 
-  <!-- Header -->
-  <header class="max-w-7xl mx-auto p-4 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3">
-      <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-cyan-400 rounded-lg flex items-center justify-center font-bold">MD</div>
-      <span class="text-xl font-semibold">MineDime Hosting</span>
-    </a>
-    <nav class="hidden md:flex gap-6 items-center text-sm">
-      <a href="index.html" class="hover:underline">Home</a>
-      <a href="pricing.html" class="hover:underline">Pricing</a>
-      <a href="features.html" class="hover:underline">Features</a>
-      <a href="support.html" class="hover:underline">Support</a>
-      <a href="contact.html" class="hover:underline">Contact</a>
-      <a href="login.html" class="px-4 py-2 bg-indigo-500 rounded text-white">Sign In</a>
-    </nav>
-    <button class="md:hidden px-3 py-2 bg-slate-800 rounded">Menu</button>
-  </header>
+  <div class="bg-slate-800 p-8 rounded-lg shadow-md w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">Sign In</h1>
 
-  <!-- Login Form -->
-  <section class="hero-bg py-16">
-    <div class="max-w-md mx-auto bg-slate-800 p-8 rounded-lg shadow-lg">
-      <h2 class="text-2xl font-bold mb-6 text-center">Sign In to MineDime Hosting</h2>
-      <form class="grid gap-4">
-        <input type="email" placeholder="Email" class="p-3 rounded bg-slate-900/50" />
-        <input type="password" placeholder="Password" class="p-3 rounded bg-slate-900/50" />
-        <button type="submit" class="px-4 py-3 bg-indigo-500 rounded text-white font-semibold hover:bg-indigo-600">Sign In</button>
-      </form>
-      <p class="mt-4 text-slate-400 text-sm text-center">Don't have an account? <a href="index.html" class="text-indigo-400 underline">Sign Up</a></p>
-    </div>
-  </section>
+    <form id="loginForm" class="flex flex-col gap-4">
+      <input type="email" id="email" placeholder="Email" class="p-3 rounded bg-slate-900/50" required>
+      <input type="password" id="password" placeholder="Password" class="p-3 rounded bg-slate-900/50" required>
+      <button type="submit" class="px-4 py-3 bg-indigo-500 rounded text-white hover:bg-indigo-600">Login</button>
+    </form>
 
-  <!-- Footer -->
-  <footer class="border-t border-slate-800 mt-8">
-    <div class="max-w-6xl mx-auto p-6 flex flex-col md:flex-row justify-between gap-6 text-slate-400 text-sm">
-      <div><strong>MineDime Hosting</strong><p>Fast hosting. No nonsense.</p></div>
-      <div>
-        <div>Support: <a href="mailto:support@minedime.org" class="underline">support@minedime.org</a></div>
-        <div>Discord: <a href="https://discord.gg/JpcnRD5PCj" class="text-indigo-400 underline">Join our Discord</a></div>
-      </div>
-      <div>© MineDime Hosting — All rights reserved.</div>
-    </div>
-  </footer>
+    <p class="mt-4 text-center text-slate-400 text-sm">
+      Don't have an account? <a href="signup.html" class="text-indigo-400 underline">Sign Up</a>
+    </p>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (!email || !password) {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      try {
+        const res = await fetch('/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          alert("Logged in successfully!");
+          window.location.href = "index.html";
+        } else {
+          alert(data.message);
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Error connecting to server.");
+      }
+    });
+  </script>
 
 </body>
 </html>

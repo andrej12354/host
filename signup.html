@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MineDime Hosting — Sign Up</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #0b1220 50%, #071022 100%); }
+  </style>
+</head>
+<body class="antialiased text-slate-200 bg-slate-900">
+
+  <!-- Header -->
+  <header class="max-w-7xl mx-auto p-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-cyan-400 rounded-lg flex items-center justify-center font-bold">MD</div>
+      <span class="text-xl font-semibold">MineDime Hosting</span>
+    </a>
+    <nav class="hidden md:flex gap-6 items-center text-sm">
+      <a href="index.html" class="hover:underline">Home</a>
+      <a href="pricing.html" class="hover:underline">Pricing</a>
+      <a href="features.html" class="hover:underline">Features</a>
+      <a href="support.html" class="hover:underline">Support</a>
+      <a href="login.html" class="px-4 py-2 bg-indigo-500 rounded text-white">Sign In</a>
+    </nav>
+    <button class="md:hidden px-3 py-2 bg-slate-800 rounded">Menu</button>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-bg py-16">
+    <div class="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Create Your MineDime Account</h1>
+        <p class="mt-4 text-slate-300 max-w-md">Join today and get access to our Minecraft & Discord bot hosting plans. Fast, reliable, and secure.</p>
+      </div>
+      <div class="bg-slate-800/40 p-6 rounded-lg">
+        <h3 class="text-lg font-semibold">Sign Up</h3>
+        <form class="mt-4 grid gap-3">
+          <input class="p-3 rounded bg-slate-900/50" placeholder="Username" />
+          <input class="p-3 rounded bg-slate-900/50" type="email" placeholder="Email" />
+          <input class="p-3 rounded bg-slate-900/50" type="password" placeholder="Password" />
+          <input class="p-3 rounded bg-slate-900/50" type="password" placeholder="Confirm Password" />
+          <button type="button" class="px-4 py-3 bg-indigo-500 rounded text-white mt-2">Create Account</button>
+        </form>
+        <p class="text-slate-400 mt-3 text-sm">Already have an account? <a href="login.html" class="text-indigo-400 underline">Sign In</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 mt-8">
+    <div class="max-w-6xl mx-auto p-6 flex flex-col md:flex-row justify-between gap-6">
+      <div>
+        <strong>MineDime Hosting</strong>
+        <p class="text-slate-400 text-sm">Fast hosting. No nonsense.</p>
+      </div>
+      <div class="text-sm text-slate-400">
+        <div>Support: <a href="mailto:support@minedime.org" class="underline">support@minedime.org</a></div>
+        <div>Discord: <a href="https://discord.gg/JpcnRD5PCj" class="text-indigo-400 underline">Join our Discord</a></div>
+      </div>
+      <div class="text-sm text-slate-400">© MineDime Hosting — All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,33 +1,63 @@
-<form id="signupForm" class="mt-4 grid gap-3">
-  <input id="username" class="p-3 rounded bg-slate-900/50" placeholder="Username" />
-  <input id="email" class="p-3 rounded bg-slate-900/50" type="email" placeholder="Email" />
-  <input id="password" class="p-3 rounded bg-slate-900/50" type="password" placeholder="Password" />
-  <input id="confirmPassword" class="p-3 rounded bg-slate-900/50" type="password" placeholder="Confirm Password" />
-  <button type="button" id="signupBtn" class="px-4 py-3 bg-indigo-500 rounded text-white mt-2">Create Account</button>
-</form>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign Up — MineDime Hosting</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-200 flex items-center justify-center min-h-screen">
 
-<script>
-  const form = document.getElementById("signupForm");
-  const btn = document.getElementById("signupBtn");
+  <div class="bg-slate-800 p-8 rounded-lg shadow-md w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">Create Your Account</h1>
 
-  btn.addEventListener("click", async () => {
-    const username = document.getElementById("username").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    const confirmPassword = document.getElementById("confirmPassword").value;
+    <form id="signupForm" class="flex flex-col gap-4">
+      <input type="text" id="username" placeholder="Username" class="p-3 rounded bg-slate-900/50" required>
+      <input type="email" id="email" placeholder="Email" class="p-3 rounded bg-slate-900/50" required>
+      <input type="password" id="password" placeholder="Password" class="p-3 rounded bg-slate-900/50" required>
+      <button type="submit" class="px-4 py-3 bg-indigo-500 rounded text-white hover:bg-indigo-600">Sign Up</button>
+    </form>
 
-    if (password !== confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
+    <p class="mt-4 text-center text-slate-400 text-sm">
+      Already have an account? <a href="login.html" class="text-indigo-400 underline">Sign In</a>
+    </p>
+  </div>
 
-    const res = await fetch("/signup", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, email, password })
+  <script>
+    const form = document.getElementById('signupForm');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (!username || !email || !password) {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      try {
+        const res = await fetch('/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, email, password })
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          alert("Account created successfully!");
+          window.location.href = "login.html";
+        } else {
+          alert(data.message);
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Error connecting to server.");
+      }
     });
+  </script>
 
-    const text = await res.text();
-    alert(text);
-  });
-</script>
+</body>
+</html>

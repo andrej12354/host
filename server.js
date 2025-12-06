@@ -1,50 +1,58 @@
-const express = require("express");
-const fs = require("fs");
-const path = require("path");
-const bodyParser = require("body-parser");
+const express = require('express');
+const fs = require('fs');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const PORT = 3000;
+const ACC_FILE = path.join(__dirname, 'accs.json');
 
-// Middleware
+app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public")); // serve HTML/CSS/JS from "public"
+app.use(express.static(__dirname)); // Serve HTML files
 
-// Path to accs.json
-const ACC_FILE = path.join(__dirname, "accs.json");
+// Ensure accs.json exists
+if (!fs.existsSync(ACC_FILE)) {
+    fs.writeFileSync(ACC_FILE, JSON.stringify([]));
+}
 
-// Helper to load accounts
-function loadAccounts() {
-  if (!fs.existsSync(ACC_FILE)) return [];
-  const data = fs.readFileSync(ACC_FILE);
-  return JSON.parse(data);
+// Helper to read accounts
+function readAccounts() {
+    return JSON.parse(fs.readFileSync(ACC_FILE, 'utf8'));
 }
 
 // Helper to save accounts
 function saveAccounts(accounts) {
-  fs.writeFileSync(ACC_FILE, JSON.stringify(accounts, null, 2));
+    fs.writeFileSync(ACC_FILE, JSON.stringify(accounts, null, 2));
 }
 
-// Handle signup POST
-app.post("/signup", (req, res) => {
-  const { username, email, password } = req.body;
+// Signup endpoint
+app.post('/signup', (req, res) => {
+    const { username, email, password } = req.body;
+    if (!username || !email || !password) return res.status(400).json({ message: 'Missing fields' });
 
-  if (!username || !email || !password) {
-    return res.status(400).send("All fields are required!");
-  }
+    const accounts = readAccounts();
+    if (accounts.find(a => a.email === email)) return res.status(400).json({ message: 'Email already exists' });
 
-  const accounts = loadAccounts();
-
-  // Check if email exists
-  if (accounts.some(acc => acc.email === email)) {
-    return res.status(400).send("Email already registered!");
-  }
-
-  accounts.push({ username, email, password });
-  saveAccounts(accounts);
-
-  res.send("Account created successfully!");
+    accounts.push({ username, email, password });
+    saveAccounts(accounts);
+    res.json({ message: 'Account created' });
 });
 
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+// Login endpoint
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+    if (!email || !password) return res.status(400).json({ message: 'Missing fields' });
+
+    const accounts = readAccounts();
+    const user = accounts.find(a => a.email === email && a.password === password);
+    if (!user) return res.status(400).json({ message: 'Invalid email or password' });
+
+    res.json({ message: 'Login successful', username: user.username });
+});
+
+// Start server
+app.listen(PORT, () => {
+    console.log(`MineDime server running at http://localhost:${PORT}`);
+});
